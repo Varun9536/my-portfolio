@@ -1,138 +1,178 @@
+/* ==================================================
+   PROFESSIONAL MODERN PORTFOLIO THEME (Awwwards Style)
+   Clean • Premium • Soft Gradient • Balanced Colors
+   ================================================== */
+
+:root {
+  --bg1: #fdfcfb;
+  --bg2: #e2ebf0;
+  --card-bg: #ffffffcc;
+  --text-dark: #1a1a1a;
+  --text-light: #4d4d4d;
+  --accent: #4f46e5;  /* Premium Indigo */
+  --accent2: #06b6d4; /* Cyan */
+  --radius: 18px;
+  --transition: 0.3s ease;
+}
+
+/* ========================= BACKGROUND ========================= */
 .pageWrapper {
   min-height: 100vh;
-  background: #f7f7f7;
-  color: #222;
-  padding: 40px 20px;
+  /* background: linear-gradient(135deg, var(--bg1), var(--bg2));
+  background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+  background: linear-gradient(135deg, #4f46e5 0%, #ec4899 100%);
+  background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%); */
+  background: linear-gradient(135deg, #fff1eb 0%, #ace0f9 100%);
+  /* background: linear-gradient(140deg, #a18cd1 0%, #fbc2eb 100%); */
+
+
+
+
+
+  background-attachment: fixed;
+  background-size: 200% 200%;
+  animation: softGradient 12s ease-in-out infinite;
+
+  padding: 50px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: fadeIn 0.8s ease-in-out;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Inter", sans-serif;
+  color: var(--text-dark);
+  animation: fadeScreen 0.8s ease-in-out;
 }
 
-/* Fade-in animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes softGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* SUBTLE up animation */
-.fadeUp {
-  opacity: 0;
-  animation: fadeUp 0.9s ease forwards;
+@keyframes fadeScreen {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* ========================= HEADER ========================= */
 .header {
   text-align: center;
   margin-bottom: 60px;
 }
 
 .title {
-  font-size: 42px;
-  font-weight: bold;
-  margin-bottom: 5px;
-  animation: fadeUp 0.8s ease forwards;
+  font-size: 46px;
+  font-weight: 900;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1px;
 }
 
 .subtitle {
-  font-size: 18px;
-  color: #555;
-  animation: fadeUp 1s ease forwards;
+  font-size: 22px;
+  color: var(--text-light);
+  margin-top: 6px;
+  font-weight: 600;
 }
 
 .tagline {
-  font-size: 14px;
-  color: #777;
-  margin-top: 6px;
-  animation: fadeUp 1.2s ease forwards;
+  font-size: 18px;
+  color: #6f6f6f;
+  margin-top: 4px;
+  font-weight: 600;
 }
 
-.section {
+/* ========================= CARD SECTIONS ========================= */
+.section,
+.sectionCenter {
   width: 100%;
   max-width: 900px;
-  background: #fff;
-  padding: 30px;
-  border-radius: 16px;
+  background: var(--card-bg);
+  padding: 35px;
+  border-radius: var(--radius);
+
   margin-bottom: 40px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  animation: fadeUp 0.8s ease forwards;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .sectionTitle {
   font-size: 26px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: #222;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: var(--accent);
 }
 
 .text {
-  line-height: 1.6;
-  color: #444;
+  color: var(--text-light);
+  line-height: 1.7;
   margin-bottom: 12px;
 }
 
-/* Skill Grid */
+/* ========================= SKILLS GRID ========================= */
 .skillsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 14px;
-  padding-left: 0;
+  gap: 16px;
   list-style: none;
+  padding-left: 0;
 }
 
 .skillsGrid li {
-  background: #f1f1f1;
-  padding: 12px 16px;
-  border-radius: 10px;
+  background: #f8fafc;
+  padding: 14px 18px;
+  border-radius: var(--radius);
   text-align: center;
   font-weight: 500;
   color: #333;
-  transition: 0.3s ease;
+  border: 1px solid #e5e7eb;
+  transition: var(--transition);
 }
 
 .skillsGrid li:hover {
-  background: #222;
+  background: var(--accent);
   color: #fff;
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(79, 70, 229, 0.35);
 }
 
-/* Project list */
+/* ========================= PROJECT LIST ========================= */
 .projectList {
   list-style: none;
   padding-left: 0;
-  line-height: 1.7;
+  line-height: 1.8;
+  color: var(--text-dark);
 }
 
-.sectionCenter {
-  width: 100%;
-  max-width: 900px;
-  text-align: center;
-  background: #fff;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  animation: fadeUp 0.8s ease forwards;
+.projectList li strong {
+  color: var(--accent);
 }
 
+.projectList li:hover {
+  color: var(--accent2);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* ========================= CONTACT ========================= */
+.sectionCenter p {
+  color: var(--text-light);
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+/* ========================= FOOTER ========================= */
 .footer {
   margin-top: 40px;
-  color: #777;
+  color: #555;
   font-size: 14px;
+  text-align: center;
+  padding-bottom: 20px;
 }
