@@ -128,8 +128,37 @@ export default function Home() {
             {/* Contact */}
             <section className={styles.sectionCenter}>
                 <h2 className={styles.sectionTitle}>Contact</h2>
-                <p>Email: varunkumar953685@gmail.com</p>
-                <p>Phone: 9536855214</p>
+                <p>
+                    <a href="mailto:varunkumar953685@gmail.com" style={{ color: "#4f46e5", fontWeight: 600 }}>
+                        varunkumar953685@gmail.com
+                    </a>
+                </p>
+
+
+                {/* Clickable Phone / WhatsApp */}
+                <p>
+                    <a
+                        href="https://wa.me/919536855214"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: "#06b6d4", fontWeight: 600 }}
+                    >
+                        WhatsApp: 9536855214
+                    </a>
+                </p>
+
+
+                {/* LinkedIn Profile */}
+                <p>
+                    <a
+                        href="https://www.linkedin.com/in/varun-kumar-7b48332aa/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: "#4f46e5", fontWeight: 600 }}
+                    >
+                        LinkedIn Profile
+                    </a>
+                </p>
             </section>
 
             <footer className={styles.footer}>© {new Date().getFullYear()} Varun Kumar. All rights reserved.</footer>
