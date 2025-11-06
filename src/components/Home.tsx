@@ -120,7 +120,7 @@ export default function Home() {
             <section className={styles.section}>
                 <h2 className={styles.sectionTitle}>Experience</h2>
                 <p className={styles.text}>
-                    <strong>Software Engineer – Eice Infotech Pvt Ltd</strong> (April 2024 – Present)<br />
+                    <strong>Software Engineer – Eice Technology Pvt Ltd</strong> (April 2024 – Present)<br />
                     Working on React, Electron, PHP, backend systems, automation pipelines, and client applications.
                 </p>
             </section>
